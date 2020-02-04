@@ -1,53 +1,47 @@
+import readlineSync from 'readline-sync';
+import startGame from '..';
 
 const rule = 'What is the result of the expression?';
-
-const outputRandomExpression = () => {
+const getRandomExpression = () => {
   const operands = ['+', '-', '*'];
 
-  const firstNum = Math.floor(Math.random() * 100);
+  const firstNum = Math.floor(Math.random() * 11);
 
-  const secondNum = Math.floor(Math.random() * 100);
+  const secondNum = Math.floor(Math.random() * 11);
 
-  const randomeoOperand = operands[Math.floor(Math.random() * operands.length)];
+  const randomeOperand = operands[Math.floor(Math.random() * operands.length)];
 
+  let expression = '';
   let rightAnswer = 0;
-  switch (randomeoOperand) {
+  const arrWithExpressionAndRightAnswer = [];
+
+  switch (randomeOperand) {
     case '-':
-      console.log(`${firstNum} - ${secondNum}`);
-      rightAnswer += (firstNum - secondNum);
+      expression = (`${firstNum} - ${secondNum}`);
+      rightAnswer = (firstNum - secondNum);
       break;
     case '+':
-      console.log(`${firstNum} + ${secondNum}`);
-      rightAnswer += (firstNum + secondNum);
+      expression = (`${firstNum} + ${secondNum}`);
+      rightAnswer = (firstNum + secondNum);
       break;
     case '*':
-      console.log(`${firstNum} * ${secondNum}`);
-      rightAnswer += (firstNum * secondNum);
+      expression = (`${firstNum} * ${secondNum}`);
+      rightAnswer = (firstNum * secondNum);
       break;
     default:
   }
-  return rightAnswer;
+
+  arrWithExpressionAndRightAnswer.push(expression, rightAnswer);
+
+  return arrWithExpressionAndRightAnswer;
 };
-outputRandomExpression();
-const щпределитьправильность = (answer, rightAnswer) => {
-
-}
-
-
-
-const randomNumber = Math.floor(Math.random() * 100);
 
 const askQuestion = () => {
-  const answer = readlineSync.question(`Question: ${randomNumber}\nYour answer: `);
-  if (answer === 'yes' && randomNumber % 2 !== 0) {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${name}!`);
-  } else if (answer === 'no' && randomNumber % 2 === 0) {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${name}!`);
-  } else if (answer !== 'yes' && randomNumber % 2 === 0) {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${name}!`);
-  } else if (answer !== 'no' && randomNumber % 2 !== 0) {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${name}!`);
-  } else {
-    console.log('Correct!');
-  }
+  const [expression, rightAnswer] = getRandomExpression();
+  const answers = [];
+  const userAnswer = readlineSync.question(`Question: ${expression}\nYour answer: `);
+  answers.push(Number(userAnswer), rightAnswer);
+  return answers;
 };
+
+export default startGame(rule, askQuestion);
