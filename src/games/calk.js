@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import readlineSync from 'readline-sync';
 import startGame from '..';
 
@@ -40,7 +41,12 @@ const askQuestion = () => {
   const [expression, rightAnswer] = getRandomExpression();
   const answers = [];
   const userAnswer = readlineSync.question(`Question: ${expression}\nYour answer: `);
-  answers.push(Number(userAnswer), rightAnswer);
+
+  if (!isNaN(Number(userAnswer))) {
+    answers.push(Number(userAnswer), rightAnswer);
+  } else {
+    answers.push(userAnswer, rightAnswer);
+  }
   return answers;
 };
 
