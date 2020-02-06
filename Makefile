@@ -7,6 +7,9 @@ starteven:
 startcalk:
 	npx babel-node src/bin/brain-calk.js
 
+startgcd:
+	npx babel-node src/bin/brain-gcd.js
+
 publish:
 	npm publish --dry-run
 
