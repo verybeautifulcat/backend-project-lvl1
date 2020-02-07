@@ -26,3 +26,8 @@ npm install -g brain-games-vbc
 ## install and play brain-progression game
 
 [![asciicast](https://asciinema.org/a/ZuQwvs3DYOcWggP3sGFprgJs6.svg)](https://asciinema.org/a/ZuQwvs3DYOcWggP3sGFprgJs6)
+
+
+## install and play brain-prime game
+
+[![asciicast](https://asciinema.org/a/QScub3xIWAmYINwoeJFfPXeOf.svg)](https://asciinema.org/a/QScub3xIWAmYINwoeJFfPXeOf)

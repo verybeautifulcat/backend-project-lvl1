@@ -1,6 +1,6 @@
 {
   "name": "brain-games-vbc",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "",
   "main": "dist/index.js",
   "bin": {
