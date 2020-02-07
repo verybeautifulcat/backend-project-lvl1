@@ -3,6 +3,7 @@ import readlineSync from 'readline-sync';
 import startGame from '..';
 
 const rule = 'What is the result of the expression?';
+
 const getRandomExpression = () => {
   const arProgression = [];
   const randomFirstNumber = Math.floor(Math.random() * 101);
@@ -44,14 +45,16 @@ const getRandomExpression = () => {
 
 const askQuestion = () => {
   const [expression, rightAnswer] = getRandomExpression();
-  const answers = [];
   const userAnswer = readlineSync.question(`Question: ${expression}\nYour answer: `);
+
+  const answers = [];
 
   if (!isNaN(Number(userAnswer))) {
     answers.push(Number(userAnswer), rightAnswer);
   } else {
     answers.push(userAnswer, rightAnswer);
   }
+
   return answers;
 };
 

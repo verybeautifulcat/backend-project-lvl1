@@ -5,16 +5,12 @@ import startGame from '..';
 const rule = 'What is the result of the expression?';
 const getRandomExpression = () => {
   const operands = ['+', '-', '*'];
-
   const firstNum = Math.floor(Math.random() * 11);
-
   const secondNum = Math.floor(Math.random() * 11);
-
   const randomeOperand = operands[Math.floor(Math.random() * operands.length)];
 
   let expression = '';
   let rightAnswer = 0;
-  const arrWithExpressionAndRightAnswer = [];
 
   switch (randomeOperand) {
     case '-':
@@ -32,6 +28,7 @@ const getRandomExpression = () => {
     default:
   }
 
+  const arrWithExpressionAndRightAnswer = [];
   arrWithExpressionAndRightAnswer.push(expression, rightAnswer);
 
   return arrWithExpressionAndRightAnswer;
@@ -47,6 +44,7 @@ const askQuestion = () => {
   } else {
     answers.push(userAnswer, rightAnswer);
   }
+
   return answers;
 };
 
