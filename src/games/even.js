@@ -13,7 +13,7 @@ const askQuestion = () => {
   const answers = [];
   answers.push(userAnswer, rightAnswer);
 
-  
+
   return answers;
 };
 
