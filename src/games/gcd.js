@@ -3,7 +3,7 @@
 import readlineSync from 'readline-sync';
 import startGame from '..';
 
-const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
+const rule = 'Find the greatest common divisor of given numbers.';
 
 const getRandomExpression = () => Math.floor(Math.random() * 100);
 
