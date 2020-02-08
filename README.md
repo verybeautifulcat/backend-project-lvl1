@@ -10,12 +10,12 @@ npm install -g brain-games-vbc
 
 ## install and play brain-even game
 
-[![asciicast](https://asciinema.org/a/MpuCByMHLFUID6BWyBPyAjYhm.svg)](https://asciinema.org/a/MpuCByMHLFUID6BWyBPyAjYhm)
+[![asciicast](https://asciinema.org/a/Uhl7JPREOVNt8jlAUG5JyRiEL.svg)](https://asciinema.org/a/Uhl7JPREOVNt8jlAUG5JyRiEL)
 
 
 ## install and play brain-calk game
 
-[![asciicast](https://asciinema.org/a/gpm8XzlMMxBMaTpmtWJamGcFe.svg)](https://asciinema.org/a/gpm8XzlMMxBMaTpmtWJamGcFe)
+[![asciicast](https://asciinema.org/a/bbCGSIM7GIodHfs97wyTp2FzA.svg)](https://asciinema.org/a/bbCGSIM7GIodHfs97wyTp2FzA)
 
 
 ## install and play brain-gcd game
@@ -25,7 +25,7 @@ npm install -g brain-games-vbc
 
 ## install and play brain-progression game
 
-[![asciicast](https://asciinema.org/a/ZuQwvs3DYOcWggP3sGFprgJs6.svg)](https://asciinema.org/a/ZuQwvs3DYOcWggP3sGFprgJs6)
+[![asciicast](https://asciinema.org/a/Y59zlXreEwnvRyENRjnG3MHTp.svg)](https://asciinema.org/a/Y59zlXreEwnvRyENRjnG3MHTp)
 
 
 ## install and play brain-prime game
