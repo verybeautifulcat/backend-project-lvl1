@@ -2,8 +2,8 @@
 
 npm install -g brain-games-vbc
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/f6c4f1a09e4b6e651a27/maintainability)](https://codeclimate.com/github/verybeautifulcat/brain-games/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/f6c4f1a09e4b6e651a27/test_coverage)](https://codeclimate.com/github/verybeautifulcat/brain-games/test_coverage)
 [![Build Status](https://travis-ci.com/verybeautifulcat/backend-project-lvl1.svg?branch=master)](https://travis-ci.com/verybeautifulcat/backend-project-lvl1)
 
 
@@ -20,7 +20,7 @@ npm install -g brain-games-vbc
 
 ## install and play brain-gcd game
 
-[![asciicast](https://asciinema.org/a/4A9DF5kOK5hajXlDrF69NUeDm.svg)](https://asciinema.org/a/4A9DF5kOK5hajXlDrF69NUeDm)
+[![asciicast](https://asciinema.org/a/OnjlkuDlWXscfBjF1pLjSMNhI.svg)](https://asciinema.org/a/OnjlkuDlWXscfBjF1pLjSMNhI)
 
 
 ## install and play brain-progression game
@@ -30,4 +30,4 @@ npm install -g brain-games-vbc
 
 ## install and play brain-prime game
 
-[![asciicast](https://asciinema.org/a/QScub3xIWAmYINwoeJFfPXeOf.svg)](https://asciinema.org/a/QScub3xIWAmYINwoeJFfPXeOf)
+[![asciicast](https://asciinema.org/a/8KfV6ysKn7Gar4OqRXkBr24Dg.svg)](https://asciinema.org/a/8KfV6ysKn7Gar4OqRXkBr24Dg)
