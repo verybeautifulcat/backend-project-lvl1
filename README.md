@@ -4,7 +4,7 @@ npm install -g brain-games-vbc
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/f6c4f1a09e4b6e651a27/maintainability)](https://codeclimate.com/github/verybeautifulcat/brain-games/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/f6c4f1a09e4b6e651a27/test_coverage)](https://codeclimate.com/github/verybeautifulcat/brain-games/test_coverage)
-[![Build Status](https://travis-ci.com/verybeautifulcat/backend-project-lvl1.svg?branch=master)](https://travis-ci.com/verybeautifulcat/backend-project-lvl1)
+[![Build Status](https://travis-ci.com/verybeautifulcat/brain-games.svg?branch=master)](https://travis-ci.com/verybeautifulcat/brain-games)
 
 
 
