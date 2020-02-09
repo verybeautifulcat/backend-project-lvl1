@@ -2,10 +2,13 @@ import readlineSync from 'readline-sync';
 
 export const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const getRandomExpression = () => Math.floor(Math.random() * 100);
+export const getRandomInteger = (min, max) => {
+  const randNum = min + Math.random() * (max + 1 - min);
+  return Math.floor(randNum);
+};
 
 export const askQuestion = () => {
-  const expression = getRandomExpression();
+  const expression = getRandomInteger(-100, 100);
   const userAnswer = readlineSync.question(`Question: ${expression}\nYour answer: `);
   const rightAnswer = (expression % 2 === 0 ? 'yes' : 'no');
 

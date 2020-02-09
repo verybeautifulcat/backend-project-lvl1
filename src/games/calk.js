@@ -1,11 +1,12 @@
-/* eslint-disable no-restricted-globals */
 import readlineSync from 'readline-sync';
+import { getRandomInteger } from './even';
 
 export const rule = 'What is the result of the expression?';
+
 const getRandomExpression = () => {
   const operands = ['+', '-', '*'];
-  const firstNum = Math.floor(Math.random() * 11);
-  const secondNum = Math.floor(Math.random() * 11);
+  const firstNum = getRandomInteger(0, 11);
+  const secondNum = getRandomInteger(0, 11);
   const randomeOperand = operands[Math.floor(Math.random() * operands.length)];
 
   let expression = '';
@@ -38,11 +39,6 @@ export const askQuestion = () => {
   const answers = [];
   const userAnswer = readlineSync.question(`Question: ${expression}\nYour answer: `);
 
-  if (!isNaN(Number(userAnswer))) {
-    answers.push(Number(userAnswer), rightAnswer);
-  } else {
-    answers.push(userAnswer, rightAnswer);
-  }
-
+  answers.push(userAnswer, rightAnswer);
   return answers;
 };
