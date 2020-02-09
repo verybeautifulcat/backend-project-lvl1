@@ -1,8 +1,7 @@
 /* eslint-disable no-restricted-globals */
 import readlineSync from 'readline-sync';
-import startGame from '..';
 
-const rule = 'What is the result of the expression?';
+export const rule = 'What is the result of the expression?';
 
 const getRandomExpression = () => {
   const arProgression = [];
@@ -43,7 +42,7 @@ const getRandomExpression = () => {
   return arrWithExpressionAndRightAnswer;
 };
 
-const askQuestion = () => {
+export const askQuestion = () => {
   const [expression, rightAnswer] = getRandomExpression();
   const userAnswer = readlineSync.question(`Question: ${expression}\nYour answer: `);
 
@@ -57,5 +56,3 @@ const askQuestion = () => {
 
   return answers;
 };
-
-export default startGame(rule, askQuestion);

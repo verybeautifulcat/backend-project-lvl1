@@ -1,9 +1,8 @@
 /* eslint-disable no-restricted-globals */
 /* eslint-disable consistent-return */
 import readlineSync from 'readline-sync';
-import startGame from '..';
 
-const rule = 'Find the greatest common divisor of given numbers.';
+export const rule = 'Find the greatest common divisor of given numbers.';
 
 const getRandomExpression = () => Math.floor(Math.random() * 100);
 
@@ -17,7 +16,7 @@ const maxDivider = (num1, num2) => {
   }
 };
 
-const askQuestion = () => {
+export const askQuestion = () => {
   const firstNumber = getRandomExpression();
   const secondNumber = getRandomExpression();
   const expression = `${firstNumber} ${secondNumber}`;
@@ -35,5 +34,3 @@ const askQuestion = () => {
 
   return answers;
 };
-
-export default startGame(rule, askQuestion);
