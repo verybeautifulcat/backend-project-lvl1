@@ -9,8 +9,8 @@ const getRandomExpression = () => {
   const maxLengthProgression = 10;
   const operands = ['+', '-'];
   const randomeOperand = operands[Math.floor(Math.random() * operands.length)];
-  const step = Math.floor(Math.random() * 6);
-
+  const step = getRandomInteger(0, 5);
+  // беру от 0 до 5, чтобы шаг между числами в прогрессии был небольшим
   let nextNumber = randomFirstNumber;
   for (let lengthProgressoin = 1; lengthProgressoin <= maxLengthProgression;
     lengthProgressoin += 1) {

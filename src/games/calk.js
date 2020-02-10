@@ -6,6 +6,7 @@ export const rule = 'What is the result of the expression?';
 const getRandomExpression = () => {
   const operands = ['+', '-', '*'];
   const firstNum = getRandomInteger(0, 11);
+  // в getRandomInteger беру от 0 до 11, чтобы выражения были не такими сложными
   const secondNum = getRandomInteger(0, 11);
   const randomeOperand = operands[Math.floor(Math.random() * operands.length)];
 
