@@ -1,14 +1,6 @@
-/* eslint-disable no-restricted-globals */
 import readlineSync from 'readline-sync';
 
-const checkNaN = (str) => {
-  if (!isNaN(Number(str))) {
-    return Number(str);
-  }
-  return str;
-};
-
-export default (rule, askQoestion) => {
+export default (rule, getExpressionAndRightAnswer) => {
   console.log('Welcome to the Brain Games!');
 
   const name = readlineSync.question('May I have your name? ');
@@ -20,12 +12,14 @@ export default (rule, askQoestion) => {
   const [minNumberOfRounds, maxNumberOfRounds] = [1, 3];
 
   for (let round = minNumberOfRounds; round <= maxNumberOfRounds; round += 1) {
-    const [userAnswer, rightAnswer] = askQoestion();
+    const [expression, rightAnswer] = getExpressionAndRightAnswer();
 
-    if (checkNaN(userAnswer) !== rightAnswer) {
+    const userAnswer = readlineSync.question(`Question: ${expression}\nYour answer: `);
+
+    if (userAnswer !== rightAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${name}!`);
       break;
-    } if (checkNaN(userAnswer) === rightAnswer && round === maxNumberOfRounds) {
+    } if (userAnswer === rightAnswer && round === maxNumberOfRounds) {
       console.log(`Correct!\nCongratulations, ${name}!`);
       break;
     }

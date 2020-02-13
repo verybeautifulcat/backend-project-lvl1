@@ -1,48 +1,33 @@
-import readlineSync from 'readline-sync';
-import { getRandomInteger } from './even';
+import getRandomInteger from '../utils';
+import startGame from '..';
 
-export const rule = 'What is the result of the expression?';
+const rule = 'What is the result of the expression?';
 
-const getRandomExpression = () => {
-  const arProgression = [];
+const getExpressionAndRightAnswer = () => {
+  const arrProgression = [];
   const randomFirstNumber = getRandomInteger(-100, 100);
   const maxLengthProgression = 10;
-  const operands = ['+', '-'];
-  const randomeOperand = operands[Math.floor(Math.random() * operands.length)];
-  const step = getRandomInteger(0, 5);
-  // беру от 0 до 5, чтобы шаг между числами в прогрессии был небольшим
+  const step = getRandomInteger(-5, 5);
+  // беру от -5 до 5, чтобы шаг между числами в прогрессии был небольшим
   let nextNumber = randomFirstNumber;
   for (let lengthProgressoin = 1; lengthProgressoin <= maxLengthProgression;
     lengthProgressoin += 1) {
-    arProgression.push(nextNumber);
-
-    switch (randomeOperand) {
-      case '+':
-        nextNumber += step;
-        break;
-      case '-':
-        nextNumber -= step;
-        break;
-      default:
-    }
+    arrProgression.push(nextNumber);
+    nextNumber += step;
   }
 
-  const randomElementFromArProgression = Math.floor(Math.random() * arProgression.length);
-  const rightAnswer = arProgression[randomElementFromArProgression];
+  const randomElementFromArrProgression = getRandomInteger(0, arrProgression.length - 1);
 
-  arProgression[randomElementFromArProgression] = '..';
-  const expression = arProgression.join(' ');
+  const rightAnswer = arrProgression[randomElementFromArrProgression];
+
+  arrProgression[randomElementFromArrProgression] = '..';
+
+  const expression = arrProgression.join(' ');
+
   const arrWithExpressionAndRightAnswer = [];
-  arrWithExpressionAndRightAnswer.push(expression, rightAnswer);
+  arrWithExpressionAndRightAnswer.push(expression, String(rightAnswer));
 
   return arrWithExpressionAndRightAnswer;
 };
 
-export const askQuestion = () => {
-  const [expression, rightAnswer] = getRandomExpression();
-  const userAnswer = readlineSync.question(`Question: ${expression}\nYour answer: `);
-
-  const answers = [];
-  answers.push(userAnswer, rightAnswer);
-  return answers;
-};
+startGame(rule, getExpressionAndRightAnswer);

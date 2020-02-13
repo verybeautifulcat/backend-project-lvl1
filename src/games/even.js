@@ -1,20 +1,16 @@
-import readlineSync from 'readline-sync';
+import getRandomInteger from '../utils';
+import startGame from '..';
 
-export const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
+const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-export const getRandomInteger = (min, max) => {
-  const randNum = min + Math.random() * (max + 1 - min);
-  return Math.floor(randNum);
-};// чем больше диапазон между min и max, тем сложнее игра.
-
-export const askQuestion = () => {
+const getExpressionAndRightAnswer = () => {
   const expression = getRandomInteger(-100, 100);
-  const userAnswer = readlineSync.question(`Question: ${expression}\nYour answer: `);
   const rightAnswer = (expression % 2 === 0 ? 'yes' : 'no');
 
-  const answers = [];
-  answers.push(userAnswer, rightAnswer);
+  const arrWithExpressionAndRightAnswer = [];
+  arrWithExpressionAndRightAnswer.push(expression, rightAnswer);
 
-
-  return answers;
+  return arrWithExpressionAndRightAnswer;
 };
+
+startGame(rule, getExpressionAndRightAnswer);

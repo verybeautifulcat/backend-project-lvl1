@@ -1,45 +1,35 @@
-import readlineSync from 'readline-sync';
-import { getRandomInteger } from './even';
+import getRandomInteger from '../utils';
+import startGame from '..';
 
-export const rule = 'What is the result of the expression?';
+const rule = 'What is the result of the expression?';
 
-const getRandomExpression = () => {
+const getExpressionAndRightAnswer = () => {
   const operands = ['+', '-', '*'];
   const firstNum = getRandomInteger(0, 11);
   // в getRandomInteger беру от 0 до 11, чтобы выражения были не такими сложными
   const secondNum = getRandomInteger(0, 11);
-  const randomeOperand = operands[Math.floor(Math.random() * operands.length)];
+  const randomeOperand = operands[getRandomInteger(0, operands.length - 1)];
 
-  let expression = '';
+  const expression = `${firstNum} ${randomeOperand} ${secondNum}`;
+
   let rightAnswer = 0;
-
   switch (randomeOperand) {
     case '-':
-      expression = (`${firstNum} - ${secondNum}`);
       rightAnswer = (firstNum - secondNum);
       break;
     case '+':
-      expression = (`${firstNum} + ${secondNum}`);
       rightAnswer = (firstNum + secondNum);
       break;
     case '*':
-      expression = (`${firstNum} * ${secondNum}`);
       rightAnswer = (firstNum * secondNum);
       break;
     default:
   }
 
   const arrWithExpressionAndRightAnswer = [];
-  arrWithExpressionAndRightAnswer.push(expression, rightAnswer);
+  arrWithExpressionAndRightAnswer.push(expression, String(rightAnswer));
 
   return arrWithExpressionAndRightAnswer;
 };
 
-export const askQuestion = () => {
-  const [expression, rightAnswer] = getRandomExpression();
-  const answers = [];
-  const userAnswer = readlineSync.question(`Question: ${expression}\nYour answer: `);
-
-  answers.push(userAnswer, rightAnswer);
-  return answers;
-};
+startGame(rule, getExpressionAndRightAnswer);
