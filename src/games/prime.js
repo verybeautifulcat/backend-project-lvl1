@@ -17,9 +17,9 @@ const getExpressionAndRightAnswer = () => {
   let rightAnswer = '';
   if (expression < 2) {
     rightAnswer = 'no';
-  } else {
-    rightAnswer = (expression === smallDivider(expression) ? 'yes' : 'no');
   }
+
+  rightAnswer = (expression === smallDivider(expression) ? 'yes' : 'no');
 
   const arrWithExpressionAndRightAnswer = [];
   arrWithExpressionAndRightAnswer.push(expression, rightAnswer);
