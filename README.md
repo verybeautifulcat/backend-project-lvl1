@@ -15,7 +15,7 @@ npm install -g brain-games-vbc
 
 ## install and play brain-calc game
 
-[![asciicast](https://asciinema.org/a/bbCGSIM7GIodHfs97wyTp2FzA.svg)](https://asciinema.org/a/bbCGSIM7GIodHfs97wyTp2FzA)
+[![asciicast](https://asciinema.org/a/uNVcpc3YoXJfR9U9LniDBakcD.svg)](https://asciinema.org/a/uNVcpc3YoXJfR9U9LniDBakcD)
 
 
 ## install and play brain-gcd game
