@@ -3,16 +3,17 @@ import startGame from '..';
 
 const rule = 'What is the result of the expression?';
 
+const operators = ['+', '-', '*'];
+
 const getExpressionAndRightAnswer = () => {
-  const operands = ['+', '-', '*'];
   const firstNum = getRandomInteger(0, 11);
   // в getRandomInteger беру от 0 до 11, чтобы выражения были не такими сложными
   const secondNum = getRandomInteger(0, 11);
-  const randomeOperand = operands[getRandomInteger(0, operands.length - 1)];
+  const randomeOperand = operators[getRandomInteger(0, operators.length - 1)];
 
   const expression = `${firstNum} ${randomeOperand} ${secondNum}`;
 
-  let rightAnswer = 0;
+  let rightAnswer;
   switch (randomeOperand) {
     case '-':
       rightAnswer = (firstNum - secondNum);
@@ -26,10 +27,10 @@ const getExpressionAndRightAnswer = () => {
     default:
   }
 
-  const arrWithExpressionAndRightAnswer = [];
-  arrWithExpressionAndRightAnswer.push(expression, String(rightAnswer));
+  const expressionAndRightAnswer = [];
+  expressionAndRightAnswer.push(expression, String(rightAnswer));
 
-  return arrWithExpressionAndRightAnswer;
+  return expressionAndRightAnswer;
 };
 
 startGame(rule, getExpressionAndRightAnswer);

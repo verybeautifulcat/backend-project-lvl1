@@ -13,7 +13,7 @@ npm install -g brain-games-vbc
 [![asciicast](https://asciinema.org/a/Uhl7JPREOVNt8jlAUG5JyRiEL.svg)](https://asciinema.org/a/Uhl7JPREOVNt8jlAUG5JyRiEL)
 
 
-## install and play brain-calk game
+## install and play brain-calc game
 
 [![asciicast](https://asciinema.org/a/bbCGSIM7GIodHfs97wyTp2FzA.svg)](https://asciinema.org/a/bbCGSIM7GIodHfs97wyTp2FzA)
 

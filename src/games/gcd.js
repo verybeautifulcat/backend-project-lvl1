@@ -3,25 +3,25 @@ import startGame from '..';
 
 const rule = 'Find the greatest common divisor of given numbers.';
 
+const getGreatestCommonDivider = (num1, num2) => {
+  if (num2 === 0) {
+    return num1;
+  }
+  return getGreatestCommonDivider(num2, num1 % num2);
+};
+
 const getExpressionAndRightAnswer = () => {
-  const firstNumber = getRandomInteger(0, 100);
-  const secondNumber = getRandomInteger(0, 100);
+  const firstNumber = getRandomInteger(1, 100);
+  const secondNumber = getRandomInteger(1, 100);
 
   const expression = `${firstNumber} ${secondNumber}`;
 
-  const smallerArgument = (firstNumber > secondNumber ? secondNumber : firstNumber);
-  let rightAnswer = 0;
-  for (let divider = smallerArgument; divider > 0; divider -= 1) {
-    if (firstNumber % divider === 0 && secondNumber % divider === 0) {
-      rightAnswer = divider;
-      break;
-    }
-  }
+  const rightAnswer = getGreatestCommonDivider(firstNumber, secondNumber);
 
-  const arrWithExpressionAndRightAnswer = [];
-  arrWithExpressionAndRightAnswer.push(expression, String(rightAnswer));
+  const expressionAndRightAnswer = [];
+  expressionAndRightAnswer.push(expression, String(rightAnswer));
 
-  return arrWithExpressionAndRightAnswer;
+  return expressionAndRightAnswer;
 };
 
 startGame(rule, getExpressionAndRightAnswer);

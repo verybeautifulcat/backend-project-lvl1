@@ -17,12 +17,9 @@ export default (rule, getExpressionAndRightAnswer) => {
     const userAnswer = readlineSync.question(`Question: ${expression}\nYour answer: `);
 
     if (userAnswer !== rightAnswer) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${name}!`);
-      break;
-    } if (userAnswer === rightAnswer && round === maxNumberOfRounds) {
-      console.log(`Correct!\nCongratulations, ${name}!`);
-      break;
+      return (console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${name}!`));
     }
     console.log('Correct!');
   }
+  return (console.log(`Congratulations, ${name}!`));
 };

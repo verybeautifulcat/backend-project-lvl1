@@ -1,11 +1,12 @@
 env:
   node: true
+
 extends: 'airbnb-base'
-globals:
-  Atomics: readonly
-  SharedArrayBuffer: readonly
+
 parser: babel-eslint
+
 plugins: [babel]
+
 rules: {
   no-console: 'off'
 }

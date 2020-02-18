@@ -4,30 +4,28 @@ import startGame from '..';
 const rule = 'What is the result of the expression?';
 
 const getExpressionAndRightAnswer = () => {
-  const arrProgression = [];
-  const randomFirstNumber = getRandomInteger(-100, 100);
+  const progression = [];
   const maxLengthProgression = 10;
   const step = getRandomInteger(-5, 5);
-  // беру от -5 до 5, чтобы шаг между числами в прогрессии был небольшим
-  let nextNumber = randomFirstNumber;
-  for (let lengthProgressoin = 1; lengthProgressoin <= maxLengthProgression;
-    lengthProgressoin += 1) {
-    arrProgression.push(nextNumber);
-    nextNumber += step;
+
+  let num = getRandomInteger(-100, 100);
+  for (let index = 0; index < maxLengthProgression; index += 1) {
+    progression.push(num);
+    num += step;
   }
 
-  const randomElementFromArrProgression = getRandomInteger(0, arrProgression.length - 1);
+  const randomeIndex = getRandomInteger(0, progression.length - 1);
 
-  const rightAnswer = arrProgression[randomElementFromArrProgression];
+  const rightAnswer = progression[randomeIndex];
 
-  arrProgression[randomElementFromArrProgression] = '..';
+  progression[randomeIndex] = '..';
 
-  const expression = arrProgression.join(' ');
+  const expression = progression.join(' ');
 
-  const arrWithExpressionAndRightAnswer = [];
-  arrWithExpressionAndRightAnswer.push(expression, String(rightAnswer));
+  const expressionAndRightAnswer = [];
+  expressionAndRightAnswer.push(expression, String(rightAnswer));
 
-  return arrWithExpressionAndRightAnswer;
+  return expressionAndRightAnswer;
 };
 
 startGame(rule, getExpressionAndRightAnswer);

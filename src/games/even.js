@@ -7,10 +7,10 @@ const getExpressionAndRightAnswer = () => {
   const expression = getRandomInteger(-100, 100);
   const rightAnswer = (expression % 2 === 0 ? 'yes' : 'no');
 
-  const arrWithExpressionAndRightAnswer = [];
-  arrWithExpressionAndRightAnswer.push(expression, rightAnswer);
+  const expressionAndRightAnswer = [];
+  expressionAndRightAnswer.push(expression, rightAnswer);
 
-  return arrWithExpressionAndRightAnswer;
+  return expressionAndRightAnswer;
 };
 
 startGame(rule, getExpressionAndRightAnswer);
