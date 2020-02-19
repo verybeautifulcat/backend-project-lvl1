@@ -3,22 +3,19 @@ import startGame from '..';
 
 const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const smallDivider = (num) => {
-  let divider = 2;
-  while (num % divider !== 0) {
-    divider += 1;
+const isPrime = (num) => {
+  if (num < 2) return false;
+
+  for (let divider = 2; divider <= num / 2; divider += 1) {
+    if (num % divider === 0) return false;
   }
-  return divider;
+  return true;
 };
 
 const getExpressionAndRightAnswer = () => {
   const expression = getRandomInteger(-5, 100);
 
-  let rightAnswer;
-  if (expression < 2) {
-    rightAnswer = 'no';
-  }
-  rightAnswer = (expression === smallDivider(expression) ? 'yes' : 'no');
+  const rightAnswer = (isPrime(expression) ? 'yes' : 'no');
 
   const expressionAndRightAnswer = [];
   expressionAndRightAnswer.push(expression, rightAnswer);
