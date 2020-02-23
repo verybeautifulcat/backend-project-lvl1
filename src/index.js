@@ -1,5 +1,8 @@
 import readlineSync from 'readline-sync';
 
+const minNumberOfRounds = 1;
+const maxNumberOfRounds = 3;
+
 export default (rule, getExpressionAndRightAnswer) => {
   console.log('Welcome to the Brain Games!');
 
@@ -9,17 +12,19 @@ export default (rule, getExpressionAndRightAnswer) => {
 
   console.log(rule);
 
-  const [minNumberOfRounds, maxNumberOfRounds] = [1, 3];
-
   for (let round = minNumberOfRounds; round <= maxNumberOfRounds; round += 1) {
     const [expression, rightAnswer] = getExpressionAndRightAnswer();
 
-    const userAnswer = readlineSync.question(`Question: ${expression}\nYour answer: `);
+    console.log(`Question: ${expression}`);
+
+    const userAnswer = readlineSync.question('Your answer: ');
 
     if (userAnswer !== rightAnswer) {
-      return (console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${name}!`));
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${name}!`);
+      return false;
     }
     console.log('Correct!');
   }
-  return (console.log(`Congratulations, ${name}!`));
+  console.log(`Congratulations, ${name}!`);
+  return true;
 };

@@ -1,5 +1,5 @@
 import getRandomInteger from '../utils';
-import startGame from '..';
+import playGame from '..';
 
 const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -23,4 +23,4 @@ const getExpressionAndRightAnswer = () => {
   return expressionAndRightAnswer;
 };
 
-startGame(rule, getExpressionAndRightAnswer);
+playGame(rule, getExpressionAndRightAnswer);

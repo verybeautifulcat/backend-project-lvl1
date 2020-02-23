@@ -1,5 +1,5 @@
 import getRandomInteger from '../utils';
-import startGame from '..';
+import playGame from '..';
 
 const rule = 'What is the result of the expression?';
 
@@ -33,4 +33,4 @@ const getExpressionAndRightAnswer = () => {
   return expressionAndRightAnswer;
 };
 
-startGame(rule, getExpressionAndRightAnswer);
+playGame(rule, getExpressionAndRightAnswer);

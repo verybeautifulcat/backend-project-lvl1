@@ -1,24 +1,24 @@
 import getRandomInteger from '../utils';
-import startGame from '..';
+import playGame from '..';
 
 const rule = 'What is the result of the expression?';
 
+const maxLengthProgression = 10;
+
 const getExpressionAndRightAnswer = () => {
   const progression = [];
-  const maxLengthProgression = 10;
   const step = getRandomInteger(-5, 5);
 
-  let num = getRandomInteger(-100, 100);
+  const startProgression = getRandomInteger(-100, 100);
   for (let index = 0; index < maxLengthProgression; index += 1) {
-    progression.push(num);
-    num += step;
+    progression[index] = startProgression + step * index;
   }
 
   const randomeIndex = getRandomInteger(0, progression.length - 1);
 
-  const rightAnswer = progression[randomeIndex];
-
   progression[randomeIndex] = '..';
+
+  const rightAnswer = startProgression + step * randomeIndex;
 
   const expression = progression.join(' ');
 
@@ -28,4 +28,4 @@ const getExpressionAndRightAnswer = () => {
   return expressionAndRightAnswer;
 };
 
-startGame(rule, getExpressionAndRightAnswer);
+playGame(rule, getExpressionAndRightAnswer);

@@ -1,5 +1,5 @@
 import getRandomInteger from '../utils';
-import startGame from '..';
+import playGame from '..';
 
 const rule = 'Find the greatest common divisor of given numbers.';
 
@@ -24,4 +24,4 @@ const getExpressionAndRightAnswer = () => {
   return expressionAndRightAnswer;
 };
 
-startGame(rule, getExpressionAndRightAnswer);
+playGame(rule, getExpressionAndRightAnswer);

@@ -1,5 +1,5 @@
 import getRandomInteger from '../utils';
-import startGame from '..';
+import playGame from '..';
 
 const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -13,4 +13,4 @@ const getExpressionAndRightAnswer = () => {
   return expressionAndRightAnswer;
 };
 
-startGame(rule, getExpressionAndRightAnswer);
+playGame(rule, getExpressionAndRightAnswer);
