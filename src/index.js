@@ -20,7 +20,8 @@ export default (rule, getExpressionAndRightAnswer) => {
     const userAnswer = readlineSync.question('Your answer: ');
 
     if (userAnswer !== rightAnswer) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${name}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
+      console.log(`Let's try again, ${name}!`);
       return false;
     }
     console.log('Correct!');
